@@ -1,0 +1,55 @@
+td {
+  font-family: Consolas, Courier, 'Courier New', monospace;
+  text-align: center;
+  border: 1px solid #000000;
+  height: 18px;
+  width: 18px;
+}
+
+table, td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  cursor: pointer;
+}
+
+div.open, div.flagged {
+  height: 100%;
+  width: 100%;
+  background-color: lightgray !important;
+}
+
+.color-0 {
+  color: #ffffff;
+}
+
+.color-1 {
+  color: #0000ff;
+}
+
+.color-2 {
+  color: #008100;
+}
+
+.color-3 {
+  color: #ff1300;
+}
+
+.color-4 {
+  color: #000083;
+}
+
+.color-5 {
+  color: #810500;
+}
+
+.color-6 {
+  color: #2a9494;
+}
+
+.color-7 {
+  color: #000000;
+}
+
+.color-8 {
+  color: #808080;
+}
