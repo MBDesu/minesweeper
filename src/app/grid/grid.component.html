@@ -1,6 +1,6 @@
 <table>
   <tr *ngFor="let row of rows">
-    <td *ngFor="let cell of row" class="color-{{ cell.adjacentMines }}" (click)="checkCell(cell)" (contextmenu)="$event.preventDefault(); flagCell(cell)">
+    <td *ngFor="let cell of row" class="color-{{ cell.adjacentMines }}" (mouseup)="checkCell(cell)" (contextmenu)="$event.preventDefault(); flagCell(cell)">
       <div *ngIf="cell.status === 'open'" class="open">&nbsp;</div>
       <div *ngIf="cell.status === 'clear' && !cell.isMine">{{ cell.adjacentMines }}</div>
       <div *ngIf="cell.status === 'flagged'" class="flagged">

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter } from '@angular/core';
 import { GridSettings } from 'src/app/models/grid-settings';
 import { Cell } from '../models/cell';
 
@@ -20,10 +20,17 @@ export class GridComponent implements OnInit {
   @Input()
   difficulty: string;
 
+  @Input()
+  difficultyChanged: EventEmitter<string>;
+
   constructor() {}
 
   ngOnInit() {
     this.initializeGrid();
+    this.difficultyChanged.subscribe((newDifficulty: string) => {
+      this.difficulty = newDifficulty;
+      this.initializeGrid();
+    });
   }
 
   initializeGrid(): void {

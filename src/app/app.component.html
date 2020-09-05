@@ -1,6 +1,6 @@
-<app-grid [difficulty]="selectedDifficulty"></app-grid>
-<!-- <select [value]="selectedDifficulty">
-    <option value="easy">Easy</option>
-    <option value="medium">Medium</option>
-    <option value="hard">Hard</option>
-</select> -->
+<app-grid [difficulty]="selectedDifficulty" [difficultyChanged]="difficultyChanged"></app-grid>
+<select [(ngModel)]="selectedDifficulty" (change)="selectedNewDifficulty()">
+  <option value="easy">Easy</option>
+  <option value="medium">Medium</option>
+  <option value="hard">Hard</option>
+</select>
