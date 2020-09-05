@@ -23,6 +23,9 @@ export class GridComponent implements OnInit {
   @Input()
   difficultyChanged: EventEmitter<string>;
 
+  @Input()
+  restartClicked: EventEmitter<boolean>;
+
   constructor() {}
 
   ngOnInit() {
@@ -30,6 +33,9 @@ export class GridComponent implements OnInit {
     this.difficultyChanged.subscribe((newDifficulty: string) => {
       this.difficulty = newDifficulty;
       this.initializeGrid();
+    });
+    this.restartClicked.subscribe(() => {
+      this.restart();
     });
   }
 

@@ -10,6 +10,7 @@ export class AppComponent implements OnInit {
   title = 'minesweeper';
   selectedDifficulty: string;
   difficultyChanged = new EventEmitter<string>();
+  restartClicked = new EventEmitter<boolean>();
 
   ngOnInit(): void {
     this.selectedDifficulty = 'easy';
@@ -18,6 +19,10 @@ export class AppComponent implements OnInit {
 
   selectedNewDifficulty(): void {
     this.difficultyChanged.emit(this.selectedDifficulty);
+  }
+
+  restart(): void {
+    this.restartClicked.emit(true);
   }
 
 }
